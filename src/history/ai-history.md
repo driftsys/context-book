@@ -33,6 +33,18 @@ Much of modern machine learning grew out of trying to make search better.
 - **2011–2012 — Google Brain.** Jeff Dean, Andrew Ng, and Greg Corrado start Google Brain. Its 2012 "cat neuron" network learns to recognize cats from unlabeled YouTube frames. Google hires Hinton's team in 2013 and acquires DeepMind in 2014.
 - **2015–2016 — Neural search and translation.** RankBrain brings neural networks into search ranking. Google Neural Machine Translation replaces phrase-based Translate with a single seq2seq network. The pressure to make translation faster and better leads directly to the Transformer.
 
+## Statistical learning and big data (1984–2016)
+
+While neural networks were out of fashion, machine learning became mainstream through simpler statistical models, and through the infrastructure to train them on ever larger datasets.
+
+- **1984–1993 — Decision trees.** Breiman et al.'s CART (1984) and Ross Quinlan's ID3 (1986) and C4.5 (1993) learn readable if/then rules from data. They are the learned counterpart of the hand-written expert systems of the same era.
+- **1995 — Support vector machines and boosting.** Cortes and Vapnik's SVMs, which rest on solid statistical learning theory, become the method of choice for classification. Freund and Schapire's AdaBoost shows that many weak learners can be combined into a strong one.
+- **2001 — Random forests and gradient boosting.** Leo Breiman's random forests (bagged decision trees) and Jerome Friedman's gradient boosting machines make tree ensembles accurate, robust, and easy to use. In the same year, Breiman's essay "Statistical Modeling: The Two Cultures" argues for judging models by prediction rather than interpretation, the stance deep learning later takes to its extreme.
+- **2004–2006 — MapReduce and Hadoop.** Google's MapReduce paper (Dean and Ghemawat, 2004) and its open-source clone Hadoop (2006) make it routine to process datasets spread across thousands of commodity machines. "Big data" becomes an industry.
+- **2006–2009 — The Netflix Prize.** A $1M competition to improve movie recommendations by 10% is won by an ensemble of hundreds of models. It popularizes matrix factorization and establishes public leaderboards as a way to drive progress.
+- **2007 — CUDA.** NVIDIA makes GPUs programmable for general computation. Five years later, AlexNet is trained on two gaming GPUs.
+- **2010s — Data science.** Kaggle (2010), scikit-learn (2010), and "data scientist" as a job title bring statistical ML to every company. XGBoost (2014, published 2016) dominates tabular competitions, and on tabular data gradient-boosted trees still often beat neural networks today.
+
 ## The deep-learning revolution (2006–2017)
 
 - **2006 — "Deep learning."** Hinton's deep belief networks revive interest in training deep networks layer by layer.
