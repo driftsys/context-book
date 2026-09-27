@@ -31,7 +31,7 @@ The categories are blurring. By 2026, most major vendors offer a CLI, an IDE int
 - **Released:** research preview February 2025 with Claude 3.7 Sonnet; generally available May 2025.
 - **Where it runs:** the terminal (its flagship), VS Code and JetBrains, a desktop app, the web (claude.ai/code), mobile, Slack, and CI (GitHub Actions, GitLab). The Claude Agent SDK exposes the same harness for building custom agents.
 - **License and models:** proprietary; Claude models only, also available through AWS Bedrock, Google Vertex AI, and Microsoft Foundry.
-- **Notable:** it established many of the conventions other agents adopted: `CLAUDE.md` rules files (it also reads `AGENTS.md`), skills, sub-agents, hooks, MCP, and plugins. It also has cloud sessions and scheduled Routines (2026).
+- **Notable:** it established many of the conventions other agents adopted: `CLAUDE.md` rules files (it can also read `AGENTS.md`), skills, sub-agents, hooks, MCP, and plugins. It also has cloud sessions and scheduled Routines (2026).
 - **Pricing:** included in Claude Pro, Max, Team, and Enterprise subscriptions, or pay-per-token through the API.
 - **Market:** Anthropic reported a run-rate above $2.5 billion for Claude Code in February 2026.
 - **Positioning:** the reference terminal-first agent. ([docs](https://code.claude.com/docs/en/overview))
@@ -103,7 +103,7 @@ The categories are blurring. By 2026, most major vendors offer a CLI, an IDE int
 
 The biggest story of 2025–2026 is not any single tool but convergence on shared standards. It makes context engineering portable across agents:
 
-- **`AGENTS.md`**: a plain Markdown rules file at the repository root. Released by OpenAI in August 2025 and adopted by tens of thousands of repositories within months. Most agents read it; Claude Code reads it alongside `CLAUDE.md`.
+- **`AGENTS.md`**: a plain Markdown rules file at the repository root. Released by OpenAI in August 2025 and adopted by tens of thousands of repositories within months. Most agents read it. Recent versions of Claude Code read it when there is no `CLAUDE.md`, and a `CLAUDE.md` can import it with `@AGENTS.md`.
 - **MCP (Model Context Protocol)**: Anthropic's protocol for connecting agents to tools and data (November 2024), supported by almost every agent. Pi is the notable holdout, on the grounds that tool definitions cost too much context.
 - **Agent Skills (`SKILL.md`)**: Anthropic published skills as an open standard in December 2025, and OpenAI, Microsoft, Google, Cursor, and others adopted it within weeks to months.
 - **The Agentic AI Foundation**: in December 2025, `AGENTS.md`, MCP, and Goose moved to vendor-neutral governance under the Linux Foundation. See [AI and Ethics](../history/ethics.md#open-governance-and-the-linux-foundation).

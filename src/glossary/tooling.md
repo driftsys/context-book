@@ -1,5 +1,7 @@
 # Agent Tooling
 
+Short definitions. [Extension Mechanisms](../tools/mechanisms.md) explains each one in depth, with examples and equivalents across agents.
+
 **Rules / instructions** (`AGENTS.md`, `CLAUDE.md`, `.github/copilot-instructions.md`)
 Always loaded into context. Carry the conventions and constraints of a specific repository — what an agent working in it must never do, and how it should behave by default.
 

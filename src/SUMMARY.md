@@ -20,6 +20,7 @@
 # Tools
 
 - [The Coding Agent Landscape](tools/landscape.md)
+- [Extension Mechanisms](tools/mechanisms.md)
 
 # Techniques
 
