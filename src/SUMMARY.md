@@ -7,6 +7,7 @@
 - [A Short History of AI](history/ai-history.md)
 - [From Vibe Coding to Agentic Engineering](history/timeline.md)
 - [Key Figures](history/key-figures.md)
+- [AI and Ethics](history/ethics.md)
 
 # Glossary
 
