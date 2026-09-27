@@ -15,13 +15,13 @@ Professor emeritus at the University of Toronto, often called a "godfather of de
 
 ### Yoshua Bengio
 
-Professor at the Université de Montréal and founder of Mila, the Quebec AI institute. His 2003 neural probabilistic language model introduced learned word embeddings for language modeling, and his lab's 2014 paper with Dzmitry Bahdanau and Kyunghyun Cho introduced the attention mechanism that the Transformer later built on.
+Professor at the Université de Montréal and founder of Mila, the Quebec AI institute. He stepped down as its scientific director in 2025 and co-founded LawZero, a nonprofit focused on AI safety. His 2003 neural probabilistic language model introduced learned word embeddings for language modeling, and his lab's 2014 paper with Dzmitry Bahdanau and Kyunghyun Cho introduced the attention mechanism that the Transformer later built on.
 
 - [Bahdanau, Cho, Bengio, "Neural Machine Translation by Jointly Learning to Align and Translate", 2014](https://arxiv.org/abs/1409.0473)
 
 ### Yann LeCun
 
-Postdoc in Hinton's group in Toronto before moving to Bell Labs, where he developed convolutional neural networks (LeNet) for handwriting recognition. Professor at NYU and long-time Chief AI Scientist at Meta, and one of the most prominent skeptics that scaling LLMs alone leads to human-level intelligence.
+Postdoc in Hinton's group in Toronto before moving to Bell Labs, where he developed convolutional neural networks (LeNet) for handwriting recognition. Professor at NYU and Meta's Chief AI Scientist from 2013 until late 2025, when he left to found AMI Labs (Advanced Machine Intelligence), a startup building world models. He is one of the most prominent skeptics that scaling LLMs alone leads to human-level intelligence.
 
 Hinton, Bengio, and LeCun shared the 2018 ACM Turing Award "for conceptual and engineering breakthroughs that have made deep neural networks a critical component of computing."
 
@@ -43,7 +43,7 @@ Stanford professor who created ImageNet, the dataset whose annual challenge Alex
 
 ### Andrej Karpathy
 
-The bridge between the two halves of this chapter. Undergraduate at the University of Toronto, where he attended Hinton's classes, then PhD at Stanford under Fei-Fei Li. Founding member of OpenAI, later Senior Director of AI at Tesla, and known for teaching materials — CS231n, then "Neural Networks: Zero to Hero" — that a generation of engineers learned from directly. Karpathy coined **vibe coding** in a February 2025 tweet and, a year later, proposed **agentic engineering** as the more disciplined successor — orchestrating agents with oversight rather than prompting blind. He also popularized **context engineering** as a name for curating what an LLM sees in its context window.
+The bridge between the two halves of this chapter. Undergraduate at the University of Toronto, where he attended Hinton's classes, then an MSc at the University of British Columbia and a PhD at Stanford under Fei-Fei Li. Founding member of OpenAI, later Senior Director of AI at Tesla, and known for teaching materials — CS231n, then "Neural Networks: Zero to Hero" — that a generation of engineers learned from directly. Karpathy coined **vibe coding** in a February 2025 tweet and, a year later, proposed **agentic engineering** as the more disciplined successor — orchestrating agents with oversight rather than prompting blind. He also popularized **context engineering** as a name for curating what an LLM sees in its context window.
 
 - [Vibe coding tweet, Feb 2, 2025](https://x.com/karpathy/status/1886192184808149383)
 - [Context engineering tweet, June 2025](https://x.com/karpathy/status/1937902205765607626)
