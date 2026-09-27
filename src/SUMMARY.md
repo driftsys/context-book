@@ -15,6 +15,7 @@
 - [LLM Fundamentals](glossary/llm-fundamentals.md)
 - [Agent Tooling](glossary/tooling.md)
 - [Methodology Terms](glossary/methodology.md)
+- [Failure Modes](glossary/failure-modes.md)
 
 # Techniques
 
