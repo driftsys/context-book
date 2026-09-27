@@ -2,7 +2,7 @@
 
 A coding agent's behavior in a given repository is shaped by a stack of mechanisms: rules, commands, skills, sub-agents, MCP servers, hooks, and plugins. They differ in *who triggers them* and *when they cost context*. Choosing the right one for each piece of knowledge is the core practical skill of context engineering.
 
-This chapter uses Claude Code as the reference, because it introduced most of these mechanisms, and gives the equivalents in other agents. Details are as of September 2026 and change quickly; check the current docs of your tool.
+This chapter uses Claude Code as the reference, because it has one of the most complete implementations and popularized several of them, and gives the equivalents in other agents. Details are as of September 2026 and change quickly; check the current docs of your tool. Gemini CLI, mentioned throughout, is being replaced by Antigravity CLI, and consumer access to it ended in June 2026. Its entries describe Gemini CLI's own conventions.
 
 ## The mental model
 
@@ -38,7 +38,7 @@ Two principles follow:
 | Local | `./CLAUDE.local.md` | Personal, gitignored |
 
 - Files in the working directory and every parent directory load at launch. Files in *subdirectories* load only when the agent reads files there.
-- `@path/to/file` imports another file, up to four levels deep. Imported content still costs context.
+- `@path/to/file` imports another file. Imports can nest up to four hops deep. Imported content still costs context.
 - **`.claude/rules/*.md`** splits rules into modular files. A rule with `paths:` frontmatter loads only when a matching file is read:
 
 ```markdown
@@ -52,7 +52,7 @@ paths:
 - `/init` generates a starter `CLAUDE.md` from the codebase. `/memory` edits memory files, and `/context` shows what was actually loaded.
 - Claude Code also keeps **auto memory**: notes it writes for itself across sessions in a per-project memory directory.
 
-**`AGENTS.md`: the shared convention.** Released by OpenAI in August 2025 and now governed by the Linux Foundation's Agentic AI Foundation, `AGENTS.md` is plain Markdown with no required schema. It is read by Codex, Copilot, Cursor, OpenCode, Pi, and most other agents, and by Gemini CLI when configured. Codex concatenates every `AGENTS.md` from the repository root down to the working directory. Recent versions of Claude Code read `AGENTS.md` natively when there is no `CLAUDE.md`. A `CLAUDE.md` containing the single line `@AGENTS.md` makes one file serve every agent.
+**`AGENTS.md`: the shared convention.** Introduced with OpenAI's Codex in 2025, published as a cross-vendor convention ([agents.md](https://agents.md)) in August 2025, and now governed by the Linux Foundation's Agentic AI Foundation, `AGENTS.md` is plain Markdown with no required schema. It is read by Codex, Copilot, Cursor, OpenCode, Pi, and most other agents, and by Gemini CLI (now Antigravity CLI) when configured. Codex concatenates every `AGENTS.md` from the repository root down to the working directory. Recent versions of Claude Code read `AGENTS.md` natively when there is no `CLAUDE.md`. A `CLAUDE.md` containing the single line `@AGENTS.md` makes one file serve every agent.
 
 **Equivalents in other agents.**
 - **GitHub Copilot:** `.github/copilot-instructions.md` for the whole repository, plus path-specific `.github/instructions/*.instructions.md` files with an `applyTo:` glob.
@@ -61,7 +61,7 @@ paths:
 - **Kiro:** steering files in `.kiro/steering/`.
 
 **Best practices.**
-- Keep each file short. Anthropic recommends under about 200 lines.
+- Keep each file short. Anthropic's docs recommend under 200 lines per `CLAUDE.md` file.
 - Include only what is true for *every* task: commands, conventions, prohibitions. Move procedures into skills and file-type guidance into path-scoped rules.
 - Remove contradictions and stale instructions. They are [context clash](../glossary/failure-modes.md#context-failures) waiting to happen.
 - Put the most important constraints first ([lost in the middle](../glossary/failure-modes.md#context-failures)).

@@ -23,16 +23,6 @@ From an abstract machine on paper to agents that write most of the code. This ch
 - **1996–1997 — Deep Blue vs. Kasparov.** IBM's Deep Blue, which grew out of the Deep Thought project at Carnegie Mellon, loses its first match against world champion Garry Kasparov in 1996. It wins the 1997 rematch 3½–2½. Deep Blue relied on brute-force search (about 200 million positions per second) and a hand-tuned evaluation function, not learning. It is the high point of classical AI, and it showed that "intelligent" behavior can come from sheer computation.
 - **1997 — LSTM.** Hochreiter and Schmidhuber publish the long short-term memory network, the recurrent architecture that later dominates speech and translation.
 
-## Google and learning at web scale (1998–2016)
-
-Much of modern machine learning grew out of trying to make search better.
-
-- **1998 — PageRank.** Larry Page and Sergey Brin rank the web by its link graph. The central idea is that relevance can be derived from data at scale instead of hand-coded.
-- **2000s — Statistics beat rules.** Google's spelling correction ("Did you mean…") and, from 2006, Google Translate learn from massive text corpora instead of grammars. Peter Norvig and colleagues summarize the lesson in "The Unreasonable Effectiveness of Data" (2009).
-- **2004–2009 — Digitizing the world's books.** Google Books scans millions of volumes, and Tesseract, the OCR engine open-sourced by HP in 2005, is developed by Google from 2006. reCAPTCHA, acquired by Google in 2009, has humans transcribe the words that OCR can't read. OCR turns paper into text that search, and later language models, can train on.
-- **2011–2012 — Google Brain.** Jeff Dean, Andrew Ng, and Greg Corrado start Google Brain. Its 2012 "cat neuron" network learns to recognize cats from unlabeled YouTube frames. Google hires Hinton's team in 2013 and acquires DeepMind in 2014.
-- **2015–2016 — Neural search and translation.** RankBrain brings neural networks into search ranking. Google Neural Machine Translation replaces phrase-based Translate with a single seq2seq network. The pressure to make translation faster and better leads directly to the Transformer.
-
 ## Statistical learning and big data (1984–2016)
 
 While neural networks were out of fashion, machine learning became mainstream through simpler statistical models, and through the infrastructure to train them on ever larger datasets.
@@ -42,8 +32,18 @@ While neural networks were out of fashion, machine learning became mainstream th
 - **2001 — Random forests and gradient boosting.** Leo Breiman's random forests (bagged decision trees) and Jerome Friedman's gradient boosting machines make tree ensembles accurate, robust, and easy to use. In the same year, Breiman's essay "Statistical Modeling: The Two Cultures" argues for judging models by prediction rather than interpretation, the stance deep learning later takes to its extreme.
 - **2004–2006 — MapReduce and Hadoop.** Google's MapReduce paper (Dean and Ghemawat, 2004) and its open-source clone Hadoop (2006) make it routine to process datasets spread across thousands of commodity machines. "Big data" becomes an industry.
 - **2006–2009 — The Netflix Prize.** A $1M competition to improve movie recommendations by 10% is won by an ensemble of hundreds of models. It popularizes matrix factorization and establishes public leaderboards as a way to drive progress.
-- **2007 — CUDA.** NVIDIA makes GPUs programmable for general computation. Five years later, AlexNet is trained on two gaming GPUs.
+- **2007 — CUDA.** Nvidia makes GPUs programmable for general computation. Five years later, AlexNet is trained on two gaming GPUs.
 - **2010s — Data science.** Kaggle (2010), scikit-learn (2010), and "data scientist" as a job title bring statistical ML to every company. XGBoost (2014, published 2016) dominates tabular competitions, and on tabular data gradient-boosted trees still often beat neural networks today.
+
+## Google and learning at web scale (1998–2016)
+
+Much of modern machine learning grew out of trying to make search better.
+
+- **1998 — PageRank.** Larry Page and Sergey Brin rank the web by its link graph. The central idea is that relevance can be derived from data at scale instead of hand-coded.
+- **2000s — Statistics beat rules.** Google's spelling correction ("Did you mean…") and, from 2006, Google Translate learn from massive text corpora instead of grammars. Peter Norvig and colleagues summarize the lesson in "The Unreasonable Effectiveness of Data" (2009).
+- **2004–2009 — Digitizing the world's books.** Google Books scans millions of volumes, and Tesseract, the OCR engine open-sourced by HP in 2005, is developed by Google from 2006. reCAPTCHA, acquired by Google in 2009, has humans transcribe the words that OCR can't read. OCR turns paper into text that search, and later language models, can train on.
+- **2011–2012 — Google Brain.** Jeff Dean, Andrew Ng, and Greg Corrado start Google Brain. Its 2012 "cat neuron" network learns to recognize cats from unlabeled YouTube frames. Google hires Hinton's team in 2013 and acquires DeepMind in 2014.
+- **2015–2016 — Neural search and translation.** RankBrain brings neural networks into search ranking. Google Neural Machine Translation replaces phrase-based Translate with a single seq2seq network. The pressure to make translation faster and better leads directly to the Transformer.
 
 ## The deep-learning revolution (2006–2017)
 
@@ -73,9 +73,12 @@ While neural networks were out of fashion, machine learning became mainstream th
 - **2023 — Frontier assistants.** OpenAI releases GPT-4 and Anthropic releases Claude, both in March. Open-weight models (Meta's Llama) spread quickly. Context windows grow from a few thousand tokens to hundreds of thousands.
 - **2024 — Multimodality, reasoning, tools.** Claude 3, GPT-4o, and Claude 3.5 Sonnet raise the ceiling on coding. OpenAI's o1 introduces models trained to reason at length before answering. Anthropic ships computer use and open-sources the [Model Context Protocol](timeline.md#november-25-2024--the-model-context-protocol).
 - **2024–2025 — OCR gets absorbed by LLMs.** Vision-language models (GPT-4o, Claude, Gemini) read scanned pages, tables, and handwriting directly, collapsing the old OCR → parsing → understanding pipeline into a single model call. Dedicated models such as [Mistral OCR](https://mistral.ai/news/mistral-ocr/) (March 2025) and [DeepSeek-OCR](https://arxiv.org/abs/2510.18234) (October 2025) follow. DeepSeek-OCR goes further: it renders long text as images to compress it into fewer vision tokens, which makes OCR a context-engineering technique.
-- **2025 — Agents write code.** DeepSeek-R1 shows that open models can reason too. Anthropic launches [Claude Code](https://www.anthropic.com/news/claude-3-7-sonnet) (February), an agent that works directly in the terminal and the repository. "Vibe coding" and then "context engineering" enter the vocabulary. In December, MCP, AGENTS.md, and Block's goose move to the Linux Foundation's new [Agentic AI Foundation](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation).
-- **2026 — Agentic engineering and Mythos.** Karpathy names the discipline ["agentic engineering"](https://x.com/karpathy/status/2019137879310836075). In April, Anthropic announces Claude Mythos Preview under Project Glasswing. It withholds general release and gives access only to selected partners for defensive security work, because the model finds and exploits software vulnerabilities well enough to raise new security risks. Holding back a frontier model over its cyber capabilities is an unusual step. ([Anthropic, Project Glasswing](https://www.anthropic.com/glasswing))
+- **2025 — Open reasoning models.** DeepSeek-R1 shows that open models can reason too.
+- **2025 — Agents write code.** Anthropic launches [Claude Code](https://www.anthropic.com/news/claude-3-7-sonnet) (February), an agent that works directly in the terminal and the repository.
+- **2025 — New vocabulary.** "Vibe coding" and then "context engineering" enter the vocabulary; see [From Vibe Coding to Agentic Engineering](timeline.md).
+- **2025 — Shared agent standards.** In December, MCP, AGENTS.md, and Block's goose move to the Linux Foundation's new [Agentic AI Foundation](ethics.md#open-governance-and-the-linux-foundation).
+- **2026 — Agentic engineering and Mythos.** Karpathy names the discipline ["agentic engineering"](https://x.com/karpathy/status/2019137879310836075). In April, Anthropic announces Claude Mythos Preview under Project Glasswing. It initially withholds general release and gives access only to selected partners for defensive security work, because the model finds and exploits software vulnerabilities well enough to raise new security risks. Holding back a frontier model over its cyber capabilities is an unusual step. In June, Anthropic releases Claude Fable 5, a Mythos-class model with added safeguards, for general use, while the most capable version stays restricted. ([Anthropic, Project Glasswing](https://www.anthropic.com/glasswing), [Anthropic, Claude Fable 5](https://www.anthropic.com/news/claude-fable-5-mythos-5))
 
 ## The through-line
 
-Each era moved more of the work from the human writing explicit instructions to the machine learning them. Rules gave way to learned features, learned features to pre-trained models, and pre-trained models to agents. What remained for the human changed from *writing the program* to *specifying the goal and curating the context*. That shift is the subject of the rest of this book.
+Each era moved more of the work from the human writing explicit instructions to the machine learning them. Rules gave way to learned features, learned features to pre-trained models, and pre-trained models to agents. What remained for the human changed from *writing the program* to *specifying the goal and curating the context*. That shift is the subject of the rest of this book. Its costs and open questions are the subject of [AI and Ethics](ethics.md) and [AI, Society, and the Developer's Work](society.md).

@@ -43,9 +43,9 @@ Stanford professor who created ImageNet, the dataset whose annual challenge Alex
 
 ### Andrej Karpathy
 
-The bridge between the two halves of this chapter. Undergraduate at the University of Toronto, where he attended Hinton's classes, then an MSc at the University of British Columbia and a PhD at Stanford under Fei-Fei Li. Founding member of OpenAI, later Senior Director of AI at Tesla, and known for teaching materials — CS231n, then "Neural Networks: Zero to Hero" — that a generation of engineers learned from directly. Karpathy coined **vibe coding** in a February 2025 tweet and, a year later, proposed **agentic engineering** as the more disciplined successor — orchestrating agents with oversight rather than prompting blind. He also popularized **context engineering** as a name for curating what an LLM sees in its context window.
+The bridge between the two halves of this chapter. Undergraduate at the University of Toronto, where he attended Hinton's classes, then an MSc at the University of British Columbia and a PhD at Stanford under Fei-Fei Li. Founding member of OpenAI and later Senior Director of AI at Tesla. He is known for teaching materials — CS231n, then "Neural Networks: Zero to Hero" — that a generation of engineers learned from directly. Karpathy coined **vibe coding** in a February 2025 tweet. A year later, he proposed **agentic engineering** as the more disciplined successor — orchestrating agents with oversight rather than prompting blind. He also popularized **context engineering** as a name for curating what an LLM sees in its context window.
 
-- [Vibe coding tweet, Feb 2, 2025](https://x.com/karpathy/status/1886192184808149383)
+- [Vibe coding tweet, February 2, 2025](https://x.com/karpathy/status/1886192184808149383)
 - [Context engineering tweet, June 2025](https://x.com/karpathy/status/1937902205765607626)
 
 ### Simon Willison
@@ -74,4 +74,4 @@ Works on alignment research at OpenAI. His talk "The New Code" argued that in an
 
 Engineers at Anthropic credited with creating the Model Context Protocol, released in November 2024. MCP gave agentic tooling a standard way to reach external data and services, without which "rules, skills, sub-agents, and MCP" — the toolkit described in this book's glossary — would each need a bespoke integration per agent and per tool.
 
-- [Anthropic, "Introducing the Model Context Protocol", Nov 25, 2024](https://www.anthropic.com/news/model-context-protocol)
+- [Anthropic, "Introducing the Model Context Protocol", November 25, 2024](https://www.anthropic.com/news/model-context-protocol)

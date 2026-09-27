@@ -27,3 +27,7 @@
 - [Spec-Driven Development](techniques/sdd.md)
 - [Test-Driven Development](techniques/tdd.md)
 - [Quality Control with Claude](techniques/quality-control.md)
+
+---
+
+[Bibliography](bibliography.md)

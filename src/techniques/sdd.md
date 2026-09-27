@@ -2,7 +2,7 @@
 
 ## The idea
 
-Write the specification first, in a versioned file the agent and every reviewer can read — never negotiated live in a chat window that disappears with the session. The spec, not the chat transcript, is the artifact of record.
+Write the specification first, in a versioned file the agent and every reviewer can read, never negotiated live in a chat window that disappears with the session. The spec, not the chat transcript, is the artifact of record.
 
 Sean Grove's talk "The New Code" made the case for treating the spec as more valuable than the code it produces:
 
@@ -10,11 +10,11 @@ Sean Grove's talk "The New Code" made the case for treating the spec as more val
 >
 > — Sean Grove, OpenAI, "The New Code" ([transcript](https://lawwu.github.io/transcripts/8rABwKRsec4.html))
 
-His argument: a well-written spec captures the *intent* behind a system in a form humans can align on and models can execute against — and, unlike code, it survives being regenerated in a different language or a different architecture.
+His argument: a well-written spec captures the *intent* behind a system in a form humans can align on and models can execute against. Unlike code, it survives being regenerated in a different language or a different architecture.
 
 ## Why it matters more with agents than without them
 
-Without a spec, a long agentic session drifts: the agent's working context gets summarized, edited, and partially forgotten, and by the fiftieth exchange the code has quietly diverged from what was actually wanted. A spec is the fixed point everyone — human and agent — can check the current state against.
+Without a spec, a long agentic session drifts: the agent's working context gets summarized, edited, and partially forgotten, and by the fiftieth exchange the code has quietly diverged from what was actually wanted. A spec is the fixed point everyone (human and agent) can check the current state against.
 
 ## In practice
 
@@ -27,7 +27,7 @@ Without a spec, a long agentic session drifts: the agent's working context gets 
 
 ## Greenfield vs. brownfield
 
-On a greenfield project, the spec *is* effectively the whole context — there is nothing else for the agent to misread. On brownfield work, the spec has to coexist with an existing codebase's own conventions, and a [golden master test](../glossary/methodology.md) is often what stands in for a spec that was never written down for the legacy behavior.
+On a greenfield project, the spec *is* effectively the whole context: there is nothing else for the agent to misread. On brownfield work, the spec has to coexist with an existing codebase's own conventions, and a [golden master test](../glossary/methodology.md) is often what stands in for a spec that was never written down for the legacy behavior.
 
 ## Three levels of spec-driven development
 
@@ -44,34 +44,34 @@ Most tools today are spec-first or spec-anchored. Spec-as-source is an aspiratio
 Only the pioneers, the widely adopted, and the most promising are listed here, as of late 2026. Adoption changes quickly. The star counts are rough orders of magnitude.
 
 **GitHub Spec Kit** — *pioneer, widely adopted*
-Open-sourced by GitHub in September 2025 (MIT). A CLI plus slash commands for over 30 agents, including Copilot, Claude Code, Cursor, Gemini CLI, and Codex. A project-wide `constitution.md` holds non-negotiable principles. Each feature then goes through *specify* (`spec.md`: what and why) → *plan* (`plan.md`: stack, data model, architecture) → *tasks* (`tasks.md`: ordered, dependency-aware) → *implement*. It has the most GitHub stars of any tool dedicated to SDD, and Thoughtworks' Technology Radar lists it under "Assess." ([GitHub](https://github.com/github/spec-kit), [announcement](https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/))
+Open-sourced by GitHub in September 2025 (MIT), with slash commands for over 30 agents. A project-wide `constitution.md` holds non-negotiable principles, and each feature goes through *specify* (`spec.md`) → *plan* (`plan.md`) → *tasks* (`tasks.md`) → *implement*. It has the most GitHub stars of any tool dedicated to SDD. ([GitHub](https://github.com/github/spec-kit), [announcement](https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/))
 
 **Kiro** — *pioneer; popularized the term*
-AWS's agentic IDE, previewed in July 2025 and generally available in November 2025 (proprietary, with a CLI). Its spec mode writes `.kiro/specs/<feature>/requirements.md`, `design.md`, and `tasks.md`. Requirements use EARS notation (Easy Approach to Requirements Syntax, from Rolls-Royce): *"WHEN [condition] THE SYSTEM SHALL [behavior]."* Steering files in `.kiro/steering/` (`product.md`, `tech.md`, `structure.md`) hold project context, and Kiro can generate property-based tests from the spec. It works only with Kiro's own agent. ([Kiro docs](https://kiro.dev/docs/specs/))
+AWS's agentic IDE, generally available since November 2025, whose spec mode writes `requirements.md`, `design.md`, and `tasks.md` under `.kiro/specs/<feature>/`. Requirements use EARS notation (Easy Approach to Requirements Syntax): *"WHEN [condition] THE SYSTEM SHALL [behavior]."* It works only with Kiro's own agent. ([Kiro docs](https://kiro.dev/docs/specs/))
 
 **Tessl** — *pioneer of spec-as-source*
-Founded by Guy Podjarny (founder of Snyk). Launched in 2025 with a Spec Registry of usage specs for open-source libraries and a framework in which code is generated from specs and marked "do not edit." In 2026 it repositioned as a platform for distributing agent skills, with spec-driven development as one installable workflow. It is the reference example of spec-as-source, though its adoption is harder to gauge. ([Tessl](https://docs.tessl.io/use/spec-driven-development-with-tessl))
+Founded by Guy Podjarny (founder of Snyk), Tessl launched in 2025 with a framework in which code is generated from specs and marked "do not edit." In 2026 it repositioned as a platform for distributing agent skills, with spec-driven development as one installable workflow. ([Tessl](https://docs.tessl.io/use/spec-driven-development-with-tessl))
 
 **BMAD Method** — *widely adopted*
-An open-source method by Brian Madison (MIT) that recreates an agile team as agent personas: Analyst, Product Manager, Architect, Scrum Master, Developer, and QA. Work moves from brief → PRD → architecture → "sharded" story files that carry the full context each developer agent needs. It is the heaviest of these methods and scales its planning to the project's size. It has tens of thousands of GitHub stars. ([GitHub](https://github.com/bmad-code-org/BMAD-METHOD))
+An open-source method by Brian Madison (MIT) that recreates an agile team as agent personas, from Analyst to QA. Work moves from brief → PRD → architecture → "sharded" story files that carry the full context each developer agent needs. It is the heaviest of these methods. ([GitHub](https://github.com/bmad-code-org/BMAD-METHOD))
 
 **OpenSpec** — *widely adopted, built for existing codebases*
-By Fission AI (MIT), for 30+ agents. `openspec/specs/` holds the current truth about the system, and each change lives in `openspec/changes/<change>/` as a proposal, design, tasks, and *delta specs*. Archiving a completed change merges its deltas into the main specs, so the specification grows incrementally instead of being written up front: "fluid not rigid, iterative not waterfall." It is also listed under "Assess" on the Thoughtworks Radar. ([GitHub](https://github.com/Fission-AI/OpenSpec))
+By Fission AI (MIT). `openspec/specs/` holds the current truth about the system, and each change carries its own proposal, tasks, and *delta specs*. Archiving a completed change merges its deltas into the main specs, so the specification grows incrementally. ([GitHub](https://github.com/Fission-AI/OpenSpec))
 
 **Taskmaster AI** — *early pioneer, widely adopted*
-Launched in March 2025, before "spec-driven development" was a common term. It turns a PRD into a `tasks.json` with dependencies, complexity scores, and subtasks, and feeds the agent one task at a time through an MCP server or CLI. The *task list* is the working context. Its license is MIT with the Commons Clause, so it is not strictly open source. ([GitHub](https://github.com/eyaltoledano/claude-task-master))
+Launched in March 2025, before "spec-driven development" was a common term. It turns a PRD into a `tasks.json` with dependencies and subtasks, and feeds the agent one task at a time through an MCP server or CLI. Its license is MIT with the Commons Clause, so it is not strictly open source. ([GitHub](https://github.com/eyaltoledano/claude-task-master))
 
 **GSD ("Get Shit Done")** — *widely adopted*
-Launched in December 2025 (MIT), first for Claude Code and then for more than a dozen agents. It keeps project state in files (project, roadmap, plans), splits work into small plans, and runs each in a fresh sub-agent context before checking it against explicit goals. It explicitly presents itself as a defense against [context rot](../glossary/failure-modes.md), which makes it a direct application of context engineering. ([GitHub](https://github.com/open-gsd/gsd-core))
+Launched in December 2025 (MIT), first for Claude Code and then for more than a dozen agents. It keeps project state in files, splits work into small plans, and runs each in a fresh sub-agent context, explicitly as a defense against [context rot](../glossary/failure-modes.md#context-failures). ([GitHub](https://github.com/open-gsd/gsd-core))
 
 **Superpowers** — *widely adopted; spec-adjacent*
-A skills library by Jesse Vincent (MIT) for Claude Code and a dozen other agents. Its workflow runs brainstorming (validate a design) → a git worktree → a written plan of 2–5-minute tasks with exact specifications → sub-agent execution → [TDD](tdd.md) → code review against the plan. It is more a planning and TDD methodology than a spec-artifact tool. ([GitHub](https://github.com/obra/superpowers))
+A skills library by Jesse Vincent (MIT) for Claude Code and a dozen other agents. Its workflow runs from brainstorming a design to a written plan of small tasks, sub-agent execution, [TDD](tdd.md), and code review against the plan. It is more a planning and TDD methodology than a spec-artifact tool. ([GitHub](https://github.com/obra/superpowers))
 
 **Conductor** — *promising*
-Google's Gemini CLI extension, previewed in December 2025 (Apache 2.0), which Google calls "context-driven development." `conductor/product.md`, `tech-stack.md`, and `workflow.md` hold project context. Each unit of work is a *track* with its own `spec.md` and `plan.md`, which the agent checks off as it goes. ([Google](https://developers.googleblog.com/conductor-introducing-context-driven-development-for-gemini-cli/))
+Google's "context-driven development" tool, previewed in December 2025 (Apache 2.0). It was built as a Gemini CLI extension and also works with Claude Code; Gemini CLI itself is being folded into Antigravity CLI. Project context lives in `conductor/` files, and each unit of work is a *track* with its own `spec.md` and `plan.md`. ([Google](https://developers.googleblog.com/conductor-introducing-context-driven-development-for-gemini-cli/))
 
 **Intent** — *promising*
-Augment Code's multi-agent workspace, in public beta since February 2026 (proprietary). A coordinator agent turns a task into a "living spec." Implementer agents work in parallel git worktrees, and a verifier agent checks the result against the spec before a human reviews it. It works with Augment's agent and with Claude Code, Codex, and OpenCode. ([Augment](https://www.augmentcode.com/blog/intent-a-workspace-for-agent-orchestration))
+Augment Code's multi-agent workspace, in public beta since February 2026 (proprietary). A coordinator agent turns a task into a "living spec," implementer agents work in parallel git worktrees, and a verifier agent checks the result against the spec. It works with Augment's agent and with Claude Code, Codex, and OpenCode. ([Augment](https://www.augmentcode.com/blog/intent-a-workspace-for-agent-orchestration))
 
 **Plan modes (the lightweight baseline)**
 Claude Code, Codex, and Cursor each have a read-only *plan mode*: the agent explores and proposes a plan, and nothing is edited until you approve. By default the plan is not saved or versioned, so it is spec-first in its weakest form. Asking the agent to write the plan to a file in the repository is often enough to turn it into a real spec.

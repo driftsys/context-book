@@ -5,6 +5,9 @@ Short definitions. [Extension Mechanisms](../tools/mechanisms.md) explains each 
 **Rules / instructions** (`AGENTS.md`, `CLAUDE.md`, `.github/copilot-instructions.md`)
 Always loaded into context. Carry the conventions and constraints of a specific repository — what an agent working in it must never do, and how it should behave by default.
 
+**Path-scoped rules** (`.claude/rules/` with `paths:`, Copilot's `applyTo:`, Cursor's `globs`)
+Rules that load only when the agent touches files matching a pattern, so language- or directory-specific guidance costs context only where it applies. See [Rules and instructions](../tools/mechanisms.md#rules-and-instructions).
+
 **Skills**
 Bundled, task-specific procedures loaded on demand rather than kept in context at all times. A skill packages the know-how for doing one kind of thing well — building a specific file format, following a specific review checklist — so it only costs context when it is actually needed.
 
@@ -18,6 +21,9 @@ Agents given their own separate context so a large or noisy exploration (searchi
 An open standard, released by Anthropic in November 2024, for connecting an AI application to external tools and data sources through a single client-server protocol rather than a bespoke integration per pair. Often described as "USB-C for AI."
 
 - [Anthropic, "Introducing the Model Context Protocol"](https://www.anthropic.com/news/model-context-protocol)
+
+**Hooks**
+Commands the harness runs at fixed points in the agent's lifecycle (before a tool call, after an edit, before the agent stops), whatever the model decides. The only mechanism that *guarantees* behavior, such as blocking a destructive command or running a formatter. See [Hooks](../tools/mechanisms.md#hooks).
 
 **Plugin**
 The full assembly — instructions, skills, sub-agents, and MCP connections — packaged, versioned, and shared as a unit, rather than configured by hand in every project.

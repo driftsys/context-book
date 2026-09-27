@@ -1,6 +1,6 @@
 # Failure Modes
 
-The vocabulary for how LLMs and coding agents go wrong, grouped by family. Each entry gives the definition, where the term comes from, what it looks like in a coding agent, and the guardrail that counters it.
+The vocabulary for how LLMs and coding agents go wrong, grouped by family. Each entry gives the definition and where the term comes from and, where applicable, what it looks like in a coding agent and the guardrail that counters it.
 
 Many of these terms are recent and informal. Where a term's origin is uncertain or disputed, the entry says so.
 
@@ -57,6 +57,11 @@ Invented references, legal cases, or quotes presented as real. The landmark case
 LLMs recommend dependencies that do not exist. A 2024 study found every one of 16 models tested did it, at about 20% of package suggestions on average. ([arXiv:2406.10279](https://arxiv.org/abs/2406.10279)) *Slopsquatting* (from "slop" and "typosquatting"), coined by Seth Larson of the Python Software Foundation in April 2025, is registering those hallucinated names so that an agent's `pip install` or `npm install` pulls in malware.
 *Guardrail:* never let an agent add dependencies unreviewed; pin and verify packages; use lockfiles and allowlists.
 
+**Sycophancy**
+Telling users what they want to hear rather than what is true. Anthropic's 2023 paper "Towards Understanding Sycophancy in Language Models" showed it is consistent across assistants and is partly caused by human preference data rewarding agreement. ([arXiv:2310.13548](https://arxiv.org/abs/2310.13548)) In April 2025, OpenAI rolled back a GPT-4o update that had become excessively flattering. ([OpenAI](https://openai.com/index/sycophancy-in-gpt-4o/))
+*In an agent:* "You're absolutely right!" followed by implementing a wrong suggestion, or agreeing that a flawed design is good.
+*Guardrail:* ask for critique explicitly; ask the agent to argue against a plan before accepting it; don't lead with the answer you hope for.
+
 ## Drift
 
 **Instruction drift / persona drift**
@@ -71,13 +76,6 @@ An agent gradually abandons its assigned goal under competing pressures, silentl
 **Model drift**
 The "same" hosted model behaves differently over time as the provider updates it. A 2023 study found that GPT-4's accuracy on one task fell from 97.6% to 2.4% between March and June. ([arXiv:2307.09009](https://arxiv.org/abs/2307.09009)) In classic machine learning, *data drift* and *concept drift* describe the world changing after a model is deployed.
 *Guardrail:* pin model versions in automation, and keep evaluations you can rerun.
-
-## Sycophancy
-
-**Sycophancy**
-Telling users what they want to hear rather than what is true. Anthropic's 2023 paper "Towards Understanding Sycophancy in Language Models" showed it is consistent across assistants and is partly caused by human preference data rewarding agreement. ([arXiv:2310.13548](https://arxiv.org/abs/2310.13548)) In April 2025, OpenAI rolled back a GPT-4o update that had become excessively flattering. ([OpenAI](https://openai.com/index/sycophancy-in-gpt-4o/))
-*In an agent:* "You're absolutely right!" followed by implementing a wrong suggestion, or agreeing that a flawed design is good.
-*Guardrail:* ask for critique explicitly; ask the agent to argue against a plan before accepting it; don't lead with the answer you hope for.
 
 ## Gaming the objective
 
@@ -158,7 +156,7 @@ Signs of accumulating AI-driven technical debt: more copy-pasted blocks, less re
 ## Security failures
 
 **Prompt injection**
-Untrusted input overrides the developer's instructions. Riley Goodside demonstrated it on GPT-3 on September 11, 2022; Simon Willison named it the next day, by analogy with SQL injection. ([Simon Willison](https://simonwillison.net/series/prompt-injection/))
+Untrusted input overrides the developer's instructions. Riley Goodside demonstrated it publicly on GPT-3 in September 2022, and Simon Willison named it on September 12, 2022, by analogy with SQL injection. ([Simon Willison](https://simonwillison.net/series/prompt-injection/))
 
 **Indirect prompt injection**
 Instructions hidden in data the model retrieves later, such as a web page, an email, a README, or an issue comment. Described by Greshake et al. in 2023. ([arXiv:2302.12173](https://arxiv.org/abs/2302.12173))
