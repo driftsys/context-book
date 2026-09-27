@@ -8,6 +8,7 @@
 - [From Vibe Coding to Agentic Engineering](history/timeline.md)
 - [Key Figures](history/key-figures.md)
 - [AI and Ethics](history/ethics.md)
+- [AI, Society, and the Developer's Work](history/society.md)
 
 # Glossary
 
