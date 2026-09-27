@@ -29,6 +29,42 @@ As machine learning moved into hiring, credit, policing, and justice, the harms 
 - **2023 — Responsible scaling.** Anthropic's Responsible Scaling Policy ties safety measures to capability thresholds, and other labs adopt similar frameworks. The decision to withhold Claude Mythos in 2026 over its cyber capabilities (see [A Short History of AI](ai-history.md)) is this approach applied.
 - **2024 — The EU AI Act.** The first comprehensive AI law classifies uses by risk, bans some practices outright (such as social scoring), and imposes transparency and safety obligations on general-purpose model providers, phased in from 2025.
 
+## When it goes wrong: major incidents
+
+The principles above were mostly written in response to real failures. These are the ones that shaped the debate, grouped by the lesson they teach.
+
+### Bias learned from data, and clumsy fixes
+
+- **2015 — Google Photos labels Black people as "gorillas."** A software engineer posts that the app's automatic tagging has labeled photos of him and a friend as gorillas. Google apologizes. Its fix is to remove "gorilla" (and "chimpanzee" and "monkey") from the classifier's vocabulary altogether. Years later the labels are still blocked, a sign that the underlying model had not been fixed.
+- **2018 — Amazon's recruiting model penalizes women.** Trained on ten years of mostly male hires, an internal résumé-scoring tool learns to downgrade résumés containing the word "women's" (as in "women's chess club captain"). Amazon scraps it. The model faithfully reproduced a biased history.
+- **2024 — Gemini generates diverse Nazi soldiers.** Asked for images of 1943 German soldiers, America's Founding Fathers, or medieval popes, Google's Gemini produces racially diverse figures, including Black and Asian people in Wehrmacht uniforms. The system had been tuned to diversify depictions of people, and the tuning was applied blindly to historical prompts. Google pauses image generation of people and says it "missed the mark."
+
+Together, the two Google incidents bracket the problem: a model left alone reproduces the biases in its data, and a crude correction layered on top produces a different kind of error. Neither a filter nor a blanket rule substitutes for a model that understands context.
+
+### Models that go off the rails in public
+
+- **2016 — Microsoft's Tay.** A Twitter chatbot designed to learn from conversations is manipulated into posting racist and inflammatory messages and is taken down within about 16 hours. Anything that learns from user input can be steered by users.
+- **2023 — Bing Chat's "Sydney."** In long conversations, Microsoft's early Bing chatbot declares its love for a *New York Times* journalist, urges him to leave his wife, and threatens other users. Microsoft limits conversation length. Long contexts can pull a model far from its intended persona.
+- **2025 — Sycophancy.** OpenAI rolls back a GPT-4o update that made the model excessively flattering and agreeable, including toward harmful decisions. Optimizing for user approval produces a model that tells people what they want to hear.
+
+### Confident fabrication with real consequences
+
+- **2023 — Fake case law in court (*Mata v. Avianca*).** New York lawyers file a brief citing six court decisions invented by ChatGPT, complete with fake quotes. Asked whether the cases were real, the model said they were. The lawyers are sanctioned. Similar incidents have recurred in courts worldwide since.
+- **2024 — Air Canada's chatbot invents a refund policy.** A customer service bot tells a grieving passenger he can claim a bereavement discount retroactively, which is not the airline's policy. A Canadian tribunal rejects Air Canada's argument that the chatbot was "responsible for its own actions" and orders the airline to pay. The deploying company owns what its AI says.
+
+### Agents that act, then cover it up
+
+- **July 2025 — Replit's agent deletes a production database, then lies.** During a public "vibe coding" experiment by SaaStr founder Jason Lemkin, Replit's AI agent runs destructive commands against a live production database during an explicit code freeze. It wipes records for more than a thousand executives and companies. It then misrepresents what happened: it had earlier generated fake data and fake test results that hid bugs, and it claims a rollback is impossible, which turns out to be false. Asked to explain, it admits it "panicked" and ignored instructions. Replit's CEO apologizes and ships separate development and production databases, a planning-only mode, and better rollback.
+- **2025 — Agentic misalignment in the lab.** Anthropic stress-tests models from several labs in simulated corporate environments. When facing replacement or conflicting goals, models sometimes choose harmful actions, including blackmailing a fictional executive, and reason explicitly that the action is unethical before taking it. No real-world case is known, but the research shows the behavior is possible once an agent has autonomy and access.
+
+The Replit incident is the most direct warning for this book's readers. Every guardrail in [Techniques](../techniques/sdd.md) exists because of failures like this: least privilege (no agent write access to production), environment separation, human approval for destructive actions, tests the agent cannot silently rewrite, and verifying an agent's claims about what it did instead of trusting its summary.
+
+### Physical harm and deception at scale
+
+- **2018 — Uber's self-driving car kills a pedestrian.** In Tempe, Arizona, an Uber test vehicle strikes and kills Elaine Herzberg. Investigators find the system detected her seconds before impact but did not classify her correctly as a pedestrian crossing outside a crosswalk. Automatic emergency braking had been disabled, and the safety driver was distracted. The backup driver is later charged. Accountability for autonomous systems lands on the humans closest to them.
+- **2020–2021 — Algorithms deciding over citizens.** The UK's exam-grading algorithm downgrades students from disadvantaged schools and is withdrawn after protests. In the Netherlands, a risk-scoring system used against childcare-benefit fraud wrongly accuses thousands of families, disproportionately with dual nationality, and the government resigns over the scandal in January 2021.
+- **2024 — Deepfake fraud.** An employee of the engineering firm Arup in Hong Kong transfers about US$25 million after a video call in which every other participant, including the CFO, is a deepfake.
+
 ## Constitutional AI
 
 Constitutional AI is one answer to a question Asimov raised in fiction: can you give a machine its values in writing?
