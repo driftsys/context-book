@@ -17,6 +17,10 @@
 - [Methodology Terms](glossary/methodology.md)
 - [Failure Modes](glossary/failure-modes.md)
 
+# Tools
+
+- [The Coding Agent Landscape](tools/landscape.md)
+
 # Techniques
 
 - [Spec-Driven Development](techniques/sdd.md)
