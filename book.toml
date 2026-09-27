@@ -1,0 +1,23 @@
+[book]
+title = "Context Engineering"
+authors = ["Sébastien Tasson"]
+description = "A reference on context engineering: history, key figures, glossary, and the SDD/TDD techniques for working with coding agents."
+language = "en"
+src = "src"
+
+[build]
+build-dir = "book"
+
+[output.html]
+default-theme = "light"
+preferred-dark-theme = "navy"
+git-repository-url = "https://github.com/driftsys/context-book"
+edit-url-template = "https://github.com/driftsys/context-book/edit/main/src/{path}"
+site-url = "/context-book/"
+
+[output.html.fold]
+enable = true
+level = 1
+
+[output.html.search]
+limit-results = 20
